@@ -16,4 +16,4 @@ jobs:
       uses: jtalk/url-health-check-action@v1.2
       with:
         # Check the following URLs one by one sequentially
-        url: https://fast-basin-91462.herokuapp.com/
+        url: https://ancient-brook-72284.herokuapp.com/

@@ -27,9 +27,9 @@ jobs:
         if: ${{ github.event_name == 'push' && !(contains( join( toJson(github.event.commits.*.message) ), '#skip')) }}
         with:
           heroku_api_key: ${{secrets.HEROKU}}
-          heroku_app_name: "fast-basin-91462"
+          heroku_app_name: "ancient-brook-72284"
           heroku_email: "jenni.puhakka@aalto.fi"
-          healthcheck: "https://fast-basin-91462.herokuapp.com/health"
+          healthcheck: "https://ancient-brook-72284.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
