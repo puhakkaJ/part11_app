@@ -50,6 +50,9 @@ if (!inProduction) {
       })
     })
   })
+  app.get('/health', (req, res) => {
+    res.send('ok')
+  })
 } else {
   const DIST_PATH = path.resolve(__dirname, './dist')
   const INDEX_PATH = path.resolve(DIST_PATH, 'index.html')
