@@ -24,6 +24,10 @@ watcher.on('ready', () => {
   })
 })
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 /**
  * For frontend use hot loading when in development, else serve the static content
  */
@@ -50,22 +54,13 @@ if (!inProduction) {
       })
     })
   })
-  app.get('/health', (req, res) => {
-    res.send('ok')
-  })
 } else {
   const DIST_PATH = path.resolve(__dirname, './dist')
   const INDEX_PATH = path.resolve(DIST_PATH, 'index.html')
 
   app.use(express.static(DIST_PATH))
   app.get('*', (req, res) => res.sendFile(INDEX_PATH))
-  app.get('/health', (req, res) => {
-    res.send('ok')
-  })
 }
-app.get('/health', (req, res) => {
-  res.send('ok')
-})
 
 app.listen(PORT, () => {
   console.log(`Started on port ${PORT}`)
