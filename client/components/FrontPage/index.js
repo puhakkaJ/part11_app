@@ -2,7 +2,7 @@ import React from 'react'
 
 const FrontPage = () => (
   <>
-    Welcome
+    Welcome text updated
     <a href="/messages">Messages</a>
   </>
 )
